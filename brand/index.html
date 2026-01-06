@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Assets | e³LM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --electric-lime: #C1FF72;
+            --safety-orange: #FF6B00;
+            --warm-coral: #FF9E80;
+            --burnt-orange: #CC5500;
+            --charcoal: #0F0F0F;
+            --dark-gray: #333333;
+            --medium-gray: #888888;
+            --light-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--charcoal);
+            min-height: 100vh;
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--light-gray);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--electric-lime);
+        }
+
+        .logo sup {
+            font-size: 0.9rem;
+            color: var(--electric-lime);
+        }
+
+        nav a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--electric-lime);
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .color-card {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .color-swatch {
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            padding: 0.75rem;
+        }
+
+        .color-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem;
+        }
+
+        .color-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-hex {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+        }
+
+        /* Logo Section */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .logo-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--dark-gray);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .logo-preview {
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .logo-preview.dark {
+            background: var(--charcoal);
+        }
+
+        .logo-preview.light {
+            background: var(--light-gray);
+        }
+
+        .logo-preview img {
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+        }
+
+        .logo-info {
+            padding: 1rem;
+            border-top: 1px solid var(--dark-gray);
+        }
+
+        .logo-info h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .logo-info p {
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+        }
+
+        /* Typography */
+        .type-sample {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--dark-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .type-sample h3 {
+            font-size: 0.75rem;
+            color: var(--electric-lime);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .type-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .type-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .type-display {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .type-body {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+        }
+
+        /* Asset Downloads */
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .asset-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--dark-gray);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .asset-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .asset-info {
+            flex: 1;
+        }
+
+        .asset-info h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .asset-info p {
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+        }
+
+        .asset-link {
+            color: var(--electric-lime);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .asset-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+            }
+
+            nav a:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><span>e</span><sup>3</sup>LM</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/brand/">Brand Assets</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Brand Assets</h1>
+        <p class="subtitle">Official brand guidelines and downloadable assets for e³LM</p>
+
+        <section class="section">
+            <h2>Color Palette</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #C1FF72;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Electric Lime</div>
+                        <div class="color-hex">#C1FF72</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #FF6B00;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Safety Orange</div>
+                        <div class="color-hex">#FF6B00</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #FF9E80;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Coral</div>
+                        <div class="color-hex">#FF9E80</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #CC5500;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Burnt Orange</div>
+                        <div class="color-hex">#CC5500</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0F0F0F; border: 1px solid #333;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Charcoal</div>
+                        <div class="color-hex">#0F0F0F</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #333333;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Gray</div>
+                        <div class="color-hex">#333333</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #888888;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Medium Gray</div>
+                        <div class="color-hex">#888888</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #F5F5F5;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Gray</div>
+                        <div class="color-hex">#F5F5F5</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Typography</h2>
+            <div class="type-sample">
+                <h3>Primary Typeface: Inter</h3>
+                <div class="type-inter type-display">The Future of Digital Innovation</div>
+                <p class="type-inter type-body">A modern, clean, and highly legible sans-serif for digital and print applications. Used for headlines, body text, and UI elements.</p>
+            </div>
+            <div class="type-sample">
+                <h3>Secondary Typeface: JetBrains Mono</h3>
+                <div class="type-mono type-display" style="font-size: 2rem;">console.log('Hello World');</div>
+                <p class="type-mono type-body">A monospaced font optimized for code, technical data, and developer experiences. Used for code snippets and technical content.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Logo Variations</h2>
+            <div class="logo-grid">
+                <div class="logo-card">
+                    <div class="logo-preview dark">
+                        <div style="font-size: 4rem; font-weight: 700;"><span style="color: #C1FF72;">e</span><sup style="color: #C1FF72; font-size: 2rem;">3</sup>LM</div>
+                    </div>
+                    <div class="logo-info">
+                        <h3>Dark Mode</h3>
+                        <p>Primary logo on dark backgrounds</p>
+                    </div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-preview light">
+                        <div style="font-size: 4rem; font-weight: 700; color: #0F0F0F;"><span style="color: #C1FF72;">e</span><sup style="color: #C1FF72; font-size: 2rem;">3</sup>LM</div>
+                    </div>
+                    <div class="logo-info">
+                        <h3>Light Mode</h3>
+                        <p>Logo for light backgrounds</p>
+                    </div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-preview" style="background: #1a1a1a;">
+                        <div style="font-size: 4rem; font-weight: 700; color: #fff;">e<sup style="font-size: 2rem;">3</sup>LM</div>
+                    </div>
+                    <div class="logo-info">
+                        <h3>Monochrome White</h3>
+                        <p>Single-color version for limited palettes</p>
+                    </div>
+                </div>
+                <div class="logo-card">
+                    <div class="logo-preview light">
+                        <div style="font-size: 4rem; font-weight: 700; color: #0F0F0F;">e<sup style="font-size: 2rem;">3</sup>LM</div>
+                    </div>
+                    <div class="logo-info">
+                        <h3>Monochrome Black</h3>
+                        <p>Single-color version for print</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Brand Guidelines</h2>
+            <div class="asset-grid">
+                <a href="color palette.png" class="asset-card" style="text-decoration: none; color: inherit;">
+                    <img src="color palette.png" alt="Color Palette">
+                    <div class="asset-info">
+                        <h4>Color Palette Guide</h4>
+                        <p>Full color system documentation</p>
+                    </div>
+                </a>
+                <a href="typography.png" class="asset-card" style="text-decoration: none; color: inherit;">
+                    <img src="typography.png" alt="Typography">
+                    <div class="asset-info">
+                        <h4>Typography Guide</h4>
+                        <p>Font specifications and usage</p>
+                    </div>
+                </a>
+                <a href="guidelines.png" class="asset-card" style="text-decoration: none; color: inherit;">
+                    <img src="guidelines.png" alt="Guidelines">
+                    <div class="asset-info">
+                        <h4>Brand Guidelines</h4>
+                        <p>Complete brand overview</p>
+                    </div>
+                </a>
+                <a href="HgZcBYgr.png" class="asset-card" style="text-decoration: none; color: inherit;">
+                    <img src="HgZcBYgr.png" alt="Logo Variations">
+                    <div class="asset-info">
+                        <h4>Logo Variations</h4>
+                        <p>All logo formats and modes</p>
+                    </div>
+                </a>
+                <a href="qx8cAF96.png" class="asset-card" style="text-decoration: none; color: inherit;">
+                    <img src="qx8cAF96.png" alt="Icon Variations">
+                    <div class="asset-info">
+                        <h4>Icon Variations</h4>
+                        <p>App icons and favicons</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
