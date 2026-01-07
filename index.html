@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e³LM | elelem.expert</title>
-    <meta name="description" content="AI Proofs of Concept - Explore tangible demos and unlock the potential of artificial intelligence.">
+    <meta name="description" content="AI-powered solutions for contract intelligence, sales automation, and API integration.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -106,13 +106,13 @@
         .hero p {
             font-size: 1.1rem;
             color: var(--medium-gray);
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 2rem;
         }
 
         /* Projects Section */
         .projects {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -120,7 +120,7 @@
         .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             gap: 1rem;
         }
 
@@ -139,59 +139,130 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--dark-gray);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 16px;
+            padding: 2rem;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
 
         .project-card:hover {
             transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.06);
             border-color: var(--electric-lime);
-            box-shadow: 0 8px 32px rgba(193, 255, 114, 0.1);
+            box-shadow: 0 12px 40px rgba(193, 255, 114, 0.1);
         }
 
-        .project-card img {
-            width: 100%;
-            max-width: 180px;
-            height: 120px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-            filter: brightness(0.95);
-            transition: filter 0.3s;
+        .project-card.no-link {
+            cursor: default;
         }
 
-        .project-card:hover img {
-            filter: brightness(1.05);
+        .project-card.no-link:hover {
+            transform: none;
+            border-color: var(--dark-gray);
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .project-icon.contractigence {
+            background: linear-gradient(135deg, rgba(193, 255, 114, 0.2), rgba(193, 255, 114, 0.05));
+        }
+
+        .project-icon.sales {
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 107, 0, 0.05));
+        }
+
+        .project-icon.api {
+            background: linear-gradient(135deg, rgba(255, 158, 128, 0.2), rgba(255, 158, 128, 0.05));
         }
 
         .project-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.35rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
             color: var(--light-gray);
         }
 
         .project-card .subdomain {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--electric-lime);
             background: rgba(193, 255, 114, 0.1);
-            padding: 0.25rem 0.5rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
+            margin-top: 0.35rem;
+            display: inline-block;
+        }
+
+        .project-card .description {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+
+        .project-card .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-card .feature-tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--light-gray);
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            margin-left: auto;
+        }
+
+        .status-badge.live {
+            color: var(--electric-lime);
+            background: rgba(193, 255, 114, 0.15);
+        }
+
+        .status-badge.backend {
+            color: var(--safety-orange);
+            background: rgba(255, 107, 0, 0.15);
+        }
+
+        .status-badge.internal {
+            color: var(--warm-coral);
+            background: rgba(255, 158, 128, 0.15);
         }
 
         /* Footer */
@@ -241,6 +312,10 @@
             nav a:first-child {
                 margin-left: 0;
             }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -249,14 +324,15 @@
         <a href="/" class="logo"><span>e</span><sup>3</sup>LM</a>
         <nav>
             <a href="#projects">Projects</a>
-            <a href="brand/">Brand Assets</a>
+            <a href="/agents/">My Agents</a>
+            <a href="/brand/">Brand Assets</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-logo"><span>e</span><sup>3</sup>LM</div>
-        <h1>AI Proofs of Concept</h1>
-        <p>Explore tangible demos and experimental projects. Each subdomain hosts a unique proof of concept exploring the potential of artificial intelligence.</p>
+        <h1>Intelligent Automation</h1>
+        <p>Building AI-powered systems that transform how teams work with documents, data, and integrations. From contract intelligence to sales automation.</p>
     </section>
 
     <section class="projects" id="projects">
@@ -264,51 +340,70 @@
             <h2>Active Projects</h2>
         </div>
         <div class="project-grid">
-            <a href="https://forge.elelem.expert" class="project-card">
-                <img src="logos/forge.png" alt="Forge">
-                <h3>Forge</h3>
-                <span class="subdomain">forge.elelem.expert</span>
+            <a href="https://contractigence.elelem.expert" class="project-card" target="_blank" rel="noopener">
+                <div class="project-header">
+                    <div class="project-icon contractigence">📄</div>
+                    <div>
+                        <h3>Contractigence</h3>
+                        <span class="subdomain">contractigence.elelem.expert</span>
+                    </div>
+                    <span class="status-badge live">Live</span>
+                </div>
+                <p class="description">
+                    A contract intelligence platform that extracts and processes PDF documents into searchable knowledge. Powered by RAG and GraphRAG systems for semantic querying, relationship mapping, and intelligent document analysis. The foundation that agents like Redline use to retrieve contract data.
+                </p>
+                <div class="features">
+                    <span class="feature-tag">PDF Extraction</span>
+                    <span class="feature-tag">RAG</span>
+                    <span class="feature-tag">GraphRAG</span>
+                    <span class="feature-tag">Semantic Search</span>
+                </div>
             </a>
-            <a href="https://gatekeeper.elelem.expert" class="project-card">
-                <img src="logos/gatekeeper.png" alt="Gatekeeper">
-                <h3>Gatekeeper</h3>
-                <span class="subdomain">gatekeeper.elelem.expert</span>
-            </a>
-            <a href="https://prospector.elelem.expert" class="project-card">
-                <img src="logos/prospector.png" alt="Prospector">
-                <h3>Prospector</h3>
-                <span class="subdomain">prospector.elelem.expert</span>
-            </a>
-            <a href="https://radar.elelem.expert" class="project-card">
-                <img src="logos/radar.png" alt="Radar">
-                <h3>Radar</h3>
-                <span class="subdomain">radar.elelem.expert</span>
-            </a>
-            <a href="https://redline.elelem.expert" class="project-card">
-                <img src="logos/redline.png" alt="Redline">
-                <h3>Redline</h3>
-                <span class="subdomain">redline.elelem.expert</span>
-            </a>
-            <a href="https://remix.elelem.expert" class="project-card">
-                <img src="logos/remix.png" alt="Remix">
-                <h3>Remix</h3>
-                <span class="subdomain">remix.elelem.expert</span>
-            </a>
-            <a href="https://tempo.elelem.expert" class="project-card">
-                <img src="logos/tempo.png" alt="Tempo">
-                <h3>Tempo</h3>
-                <span class="subdomain">tempo.elelem.expert</span>
-            </a>
-            <a href="https://thealgo.elelem.expert" class="project-card">
-                <img src="logos/thealgo.png" alt="TheAlgo">
-                <h3>TheAlgo</h3>
-                <span class="subdomain">thealgo.elelem.expert</span>
-            </a>
+
+            <div class="project-card no-link">
+                <div class="project-header">
+                    <div class="project-icon sales">📊</div>
+                    <div>
+                        <h3>Sales Pipeline</h3>
+                        <span class="subdomain">sales-pipeline.elelem.expert</span>
+                    </div>
+                    <span class="status-badge backend">Backend</span>
+                </div>
+                <p class="description">
+                    An automated agentic workflow that augments and updates sales databases with relevant real-world data. The system identifies opportunities, enriches contact information, and surfaces actionable insights—freeing account representatives to focus on what matters most: building client relationships.
+                </p>
+                <div class="features">
+                    <span class="feature-tag">Agentic Workflows</span>
+                    <span class="feature-tag">Data Enrichment</span>
+                    <span class="feature-tag">Sales Intelligence</span>
+                    <span class="feature-tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-card no-link">
+                <div class="project-header">
+                    <div class="project-icon api">🔌</div>
+                    <div>
+                        <h3>API Hub</h3>
+                        <span class="subdomain">apihub.elelem.expert</span>
+                    </div>
+                    <span class="status-badge internal">Internal</span>
+                </div>
+                <p class="description">
+                    A custom API integration layer that bridges AI agents with external services. Provides a unified interface for workspace tools and productivity services, enabling seamless connectivity for agent-based workflows that require access to calendars, documents, and communication tools.
+                </p>
+                <div class="features">
+                    <span class="feature-tag">API Gateway</span>
+                    <span class="feature-tag">Integrations</span>
+                    <span class="feature-tag">MCP Compatible</span>
+                    <span class="feature-tag">Workspace Tools</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 e<sup>3</sup>LM. All rights reserved.</p>
+        <p>&copy; 2024 e<sup>3</sup>LM. All rights reserved. | <a href="/agents/">View My Agents</a></p>
     </footer>
 </body>
 </html>
